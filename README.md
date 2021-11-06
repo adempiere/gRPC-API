@@ -46,61 +46,6 @@ For recreate stub class you must have follow:
 
 ## Install prerequisites for proto stub generation
 
-### Install Proto C
-
-```shell
-# Get the latest version number of protoc
-LATEST_VERSION=$(curl --silent "https://api.github.com/repos/protocolbuffers/protobuf/releases/latest" |
-    grep -Po '"tag_name": "\K.*?(?=")' |
-    sed -E 's|v||g')
-
-ARCHITECTURE=$(arch)
-
-ZIP_FILE=protoc-$1-linux-$ARCHITECTURE.zip
-
-# Download latest version
-URL="https://github.com/protocolbuffers/protobuf/releases/download/v$LATEST_VERSION/$ZIP_FILE"
-curl -OL $URL
-
-# Extract and overwrite into dir
-sudo unzip -o $ZIP_FILE -d /usr/local bin/protoc
-sudo unzip -o $ZIP_FILE -d /usr/local 'include/*'
-
-# Delete donwloaded file
-rm -f -v $ZIP_FILE
-
-# Assign read and execute permissions
-sudo chmod 755 /usr/local/bin/protoc
-sudo chmod 755 -R /usr/local/include/google/
-```
-
-When installation is complete, check the version with
-```Shell
-protoc --version
-```
-
-### Install Proto C Gen gRPC Web
-This is only used to generate the stub if gRPC is handled on the client side.
-
-```shell
-# Get the latest version number of protoc-gen-grpc-web
-LATEST_VERSION=$(curl --silent "https://api.github.com/repos/grpc/grpc-web/releases/latest" |
-    grep -Po '"tag_name": "\K.*?(?=")' |
-    sed -E 's|v||g')
-
-FILE=protoc-gen-grpc-web
-
-# Download
-URL=https://github.com/grpc/grpc-web/releases/download/$LATEST_VERSION/$FILE-$1-linux-x86_64
-curl -L $URL -o $FILE
-
-# Extract and overwrite into dir
-sudo mv -f -v $FILE /usr/local/bin/
-
-# Assign read and execute permissions
-sudo chmod 755 /usr/local/bin/$FILE
-```
-
 ### Install gRPC Tools (Node Proto C)
 It can be installed as a global dependency although it is already managed as a project dependency.
 
@@ -246,6 +191,30 @@ The result is generated on: `src/grpc/proto/` folder
 - `enrollment_pb.js`
 - `point_of_sales_grpc_pb.js`
 - `point_of_sales_pb.js`
+
+
+## Synchronize proto files
+
+Synchronize `.proto` files from adempiere-gRPC-Server repository to generate client stub files
+
+### Sync all proto
+```shell
+# via npm
+npm run sync
+
+# via yarn
+yarn sync
+```
+
+To sync specific proto file:
+* To access: `npm run sync:access`
+* To base data type: `npm run sync:base_data_type`
+* To business: `npm run sync:business`
+* To client: `npm run sync:client`
+* To core functionality: `npm run sync:core_functionality`
+* To dictionary: `npm run sync:dictionary`
+* To enrollment: `npm run sync:enrollment`
+* To point of sales: `npm run sync:point_of_sales`
 
 
 ## Sponsors

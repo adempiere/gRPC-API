@@ -20,7 +20,16 @@
     "stub:core_functionality": "grpc_tools_node_protoc proto/core_functionality.proto --js_out=import_style=commonjs,binary:src/grpc/ --grpc_out=grpc_js:src/grpc/",
     "stub:dictionary": "grpc_tools_node_protoc proto/dictionary.proto --js_out=import_style=commonjs,binary:src/grpc/ --grpc_out=grpc_js:src/grpc/",
     "stub:enrollment": "grpc_tools_node_protoc proto/enrollment.proto --js_out=import_style=commonjs,binary:src/grpc/ --grpc_out=grpc_js:src/grpc/",
-    "stub:point_of_sales": "grpc_tools_node_protoc proto/point_of_sales.proto --js_out=import_style=commonjs,binary:src/grpc/ --grpc_out=grpc_js:src/grpc/"
+    "stub:point_of_sales": "grpc_tools_node_protoc proto/point_of_sales.proto --js_out=import_style=commonjs,binary:src/grpc/ --grpc_out=grpc_js:src/grpc/",
+    "sync": "npm run sync:access && npm run sync:base_data_type && npm run sync:business && npm run sync:client && npm run sync:core_functionality && npm run sync:dictionary && npm run sync:enrollment && npm run sync:point_of_sales",
+    "sync:access": "curl --output ./proto/access.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/access.proto'",
+    "sync:base_data_type": "curl --output ./proto/base_data_type.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/base_data_type.proto'",
+    "sync:business": "curl --output ./proto/business.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/business.proto'",
+    "sync:client": "curl --output ./proto/client.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/client.proto'",
+    "sync:core_functionality": "curl --output ./proto/core_functionality.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/core_functionality.proto'",
+    "sync:dictionary": "curl --output ./proto/dictionary.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/dictionary.proto'",
+    "sync:enrollment": "curl --output ./proto/enrollment.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/enrollment.proto'",
+    "sync:point_of_sales": "curl --output ./proto/point_of_sales.proto -L 'https://raw.githubusercontent.com/adempiere/adempiere-gRPC-Server/master/src/main/proto/point_of_sales.proto'"
   },
   "repository": {
     "type": "git",
