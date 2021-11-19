@@ -23,17 +23,24 @@ var proto_client_pb = require('../proto/client_pb.js');
 goog.object.extend(proto, proto_client_pb);
 goog.exportSymbol('proto.data.Address', null, global);
 goog.exportSymbol('proto.data.AddressRequest', null, global);
+goog.exportSymbol('proto.data.AllocateSellerRequest', null, global);
+goog.exportSymbol('proto.data.AvailableDiscount', null, global);
 goog.exportSymbol('proto.data.AvailableDocumentType', null, global);
 goog.exportSymbol('proto.data.AvailablePaymentMethod', null, global);
 goog.exportSymbol('proto.data.AvailablePriceList', null, global);
 goog.exportSymbol('proto.data.AvailableRefund', null, global);
 goog.exportSymbol('proto.data.AvailableWarehouse', null, global);
+goog.exportSymbol('proto.data.CashClosing', null, global);
+goog.exportSymbol('proto.data.CashClosingRequest', null, global);
+goog.exportSymbol('proto.data.CashOpeningRequest', null, global);
+goog.exportSymbol('proto.data.CashWithdrawalRequest', null, global);
 goog.exportSymbol('proto.data.City', null, global);
 goog.exportSymbol('proto.data.CreateCustomerBankAccountRequest', null, global);
 goog.exportSymbol('proto.data.CreateCustomerRequest', null, global);
 goog.exportSymbol('proto.data.CreateOrderLineRequest', null, global);
 goog.exportSymbol('proto.data.CreateOrderRequest', null, global);
 goog.exportSymbol('proto.data.CreatePaymentRequest', null, global);
+goog.exportSymbol('proto.data.CreateRefundReferenceRequest', null, global);
 goog.exportSymbol('proto.data.CreateShipmentLineRequest', null, global);
 goog.exportSymbol('proto.data.CreateShipmentRequest', null, global);
 goog.exportSymbol('proto.data.Customer', null, global);
@@ -55,6 +62,8 @@ goog.exportSymbol('proto.data.Key', null, global);
 goog.exportSymbol('proto.data.KeyLayout', null, global);
 goog.exportSymbol('proto.data.ListAvailableCurrenciesRequest', null, global);
 goog.exportSymbol('proto.data.ListAvailableCurrenciesResponse', null, global);
+goog.exportSymbol('proto.data.ListAvailableDiscountsRequest', null, global);
+goog.exportSymbol('proto.data.ListAvailableDiscountsResponse', null, global);
 goog.exportSymbol('proto.data.ListAvailableDocumentTypesRequest', null, global);
 goog.exportSymbol('proto.data.ListAvailableDocumentTypesResponse', null, global);
 goog.exportSymbol('proto.data.ListAvailablePaymentMethodsRequest', null, global);
@@ -63,6 +72,10 @@ goog.exportSymbol('proto.data.ListAvailablePriceListRequest', null, global);
 goog.exportSymbol('proto.data.ListAvailablePriceListResponse', null, global);
 goog.exportSymbol('proto.data.ListAvailableWarehousesRequest', null, global);
 goog.exportSymbol('proto.data.ListAvailableWarehousesResponse', null, global);
+goog.exportSymbol('proto.data.ListCashMovementsRequest', null, global);
+goog.exportSymbol('proto.data.ListCashMovementsResponse', null, global);
+goog.exportSymbol('proto.data.ListCashSummaryMovementsRequest', null, global);
+goog.exportSymbol('proto.data.ListCashSummaryMovementsResponse', null, global);
 goog.exportSymbol('proto.data.ListCustomerBankAccountsRequest', null, global);
 goog.exportSymbol('proto.data.ListCustomerBankAccountsResponse', null, global);
 goog.exportSymbol('proto.data.ListOrderLinesRequest', null, global);
@@ -75,17 +88,21 @@ goog.exportSymbol('proto.data.ListPointOfSalesRequest', null, global);
 goog.exportSymbol('proto.data.ListPointOfSalesResponse', null, global);
 goog.exportSymbol('proto.data.ListProductPriceRequest', null, global);
 goog.exportSymbol('proto.data.ListProductPriceResponse', null, global);
+goog.exportSymbol('proto.data.ListRefundReferencesRequest', null, global);
+goog.exportSymbol('proto.data.ListRefundReferencesResponse', null, global);
 goog.exportSymbol('proto.data.ListShipmentLinesRequest', null, global);
 goog.exportSymbol('proto.data.ListShipmentLinesResponse', null, global);
 goog.exportSymbol('proto.data.Order', null, global);
 goog.exportSymbol('proto.data.OrderLine', null, global);
 goog.exportSymbol('proto.data.Payment', null, global);
+goog.exportSymbol('proto.data.PaymentSummary', null, global);
 goog.exportSymbol('proto.data.PointOfSales', null, global);
 goog.exportSymbol('proto.data.PointOfSalesRequest', null, global);
 goog.exportSymbol('proto.data.PrintTicketRequest', null, global);
 goog.exportSymbol('proto.data.PrintTicketResponse', null, global);
 goog.exportSymbol('proto.data.ProcessOrderRequest', null, global);
 goog.exportSymbol('proto.data.ProcessShipmentRequest', null, global);
+goog.exportSymbol('proto.data.RefundReference', null, global);
 goog.exportSymbol('proto.data.Region', null, global);
 goog.exportSymbol('proto.data.ReverseSalesRequest', null, global);
 goog.exportSymbol('proto.data.Shipment', null, global);
@@ -98,6 +115,300 @@ goog.exportSymbol('proto.data.UpdateOrderRequest', null, global);
 goog.exportSymbol('proto.data.UpdatePaymentRequest', null, global);
 goog.exportSymbol('proto.data.UpdateShipmentLineRequest', null, global);
 goog.exportSymbol('proto.data.ValidatePINRequest', null, global);
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.AllocateSellerRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.AllocateSellerRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.AllocateSellerRequest.displayName = 'proto.data.AllocateSellerRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.CreateRefundReferenceRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.CreateRefundReferenceRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.CreateRefundReferenceRequest.displayName = 'proto.data.CreateRefundReferenceRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.RefundReference = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.RefundReference, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.RefundReference.displayName = 'proto.data.RefundReference';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListRefundReferencesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.ListRefundReferencesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListRefundReferencesRequest.displayName = 'proto.data.ListRefundReferencesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListRefundReferencesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.ListRefundReferencesResponse.repeatedFields_, null);
+};
+goog.inherits(proto.data.ListRefundReferencesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListRefundReferencesResponse.displayName = 'proto.data.ListRefundReferencesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.PaymentSummary = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.PaymentSummary, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.PaymentSummary.displayName = 'proto.data.PaymentSummary';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListCashMovementsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.ListCashMovementsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListCashMovementsRequest.displayName = 'proto.data.ListCashMovementsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListCashMovementsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.ListCashMovementsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.data.ListCashMovementsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListCashMovementsResponse.displayName = 'proto.data.ListCashMovementsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListCashSummaryMovementsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.ListCashSummaryMovementsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListCashSummaryMovementsRequest.displayName = 'proto.data.ListCashSummaryMovementsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListCashSummaryMovementsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.ListCashSummaryMovementsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.data.ListCashSummaryMovementsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListCashSummaryMovementsResponse.displayName = 'proto.data.ListCashSummaryMovementsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.CashClosing = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.CashClosing, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.CashClosing.displayName = 'proto.data.CashClosing';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.CashClosingRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.CashClosingRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.CashClosingRequest.displayName = 'proto.data.CashClosingRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.CashWithdrawalRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.CashWithdrawalRequest.repeatedFields_, null);
+};
+goog.inherits(proto.data.CashWithdrawalRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.CashWithdrawalRequest.displayName = 'proto.data.CashWithdrawalRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.CashOpeningRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.CashOpeningRequest.repeatedFields_, null);
+};
+goog.inherits(proto.data.CashOpeningRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.CashOpeningRequest.displayName = 'proto.data.CashOpeningRequest';
+}
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -811,6 +1122,69 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.data.AvailablePaymentMethod.displayName = 'proto.data.AvailablePaymentMethod';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListAvailableDiscountsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.ListAvailableDiscountsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListAvailableDiscountsRequest.displayName = 'proto.data.ListAvailableDiscountsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.ListAvailableDiscountsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.data.ListAvailableDiscountsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.data.ListAvailableDiscountsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.ListAvailableDiscountsResponse.displayName = 'proto.data.ListAvailableDiscountsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.data.AvailableDiscount = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.data.AvailableDiscount, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.data.AvailableDiscount.displayName = 'proto.data.AvailableDiscount';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1715,6 +2089,4613 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.data.Key.displayName = 'proto.data.Key';
 }
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.AllocateSellerRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.AllocateSellerRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.AllocateSellerRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.AllocateSellerRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.AllocateSellerRequest}
+ */
+proto.data.AllocateSellerRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.AllocateSellerRequest;
+  return proto.data.AllocateSellerRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.AllocateSellerRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.AllocateSellerRequest}
+ */
+proto.data.AllocateSellerRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSalesRepresentativeUuid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.AllocateSellerRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.AllocateSellerRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.AllocateSellerRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.AllocateSellerRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSalesRepresentativeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.AllocateSellerRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.AllocateSellerRequest} returns this
+*/
+proto.data.AllocateSellerRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.AllocateSellerRequest} returns this
+ */
+proto.data.AllocateSellerRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.AllocateSellerRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.AllocateSellerRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.AllocateSellerRequest} returns this
+ */
+proto.data.AllocateSellerRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string sales_representative_uuid = 3;
+ * @return {string}
+ */
+proto.data.AllocateSellerRequest.prototype.getSalesRepresentativeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.AllocateSellerRequest} returns this
+ */
+proto.data.AllocateSellerRequest.prototype.setSalesRepresentativeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.CreateRefundReferenceRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.CreateRefundReferenceRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CreateRefundReferenceRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    amount: (f = msg.getAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    paymentDate: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    currencyUuid: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    conversionTypeUuid: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    paymentAccountDate: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    customerBankAccountUuid: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    orderUuid: jspb.Message.getFieldWithDefault(msg, 13, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.CreateRefundReferenceRequest}
+ */
+proto.data.CreateRefundReferenceRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.CreateRefundReferenceRequest;
+  return proto.data.CreateRefundReferenceRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.CreateRefundReferenceRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.CreateRefundReferenceRequest}
+ */
+proto.data.CreateRefundReferenceRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSalesRepresentativeUuid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 5:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentDate(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenderTypeCode(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCurrencyUuid(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConversionTypeUuid(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentMethodUuid(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentAccountDate(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerBankAccountUuid(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderUuid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.CreateRefundReferenceRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.CreateRefundReferenceRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CreateRefundReferenceRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSalesRepresentativeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getPaymentDate();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getTenderTypeCode();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getCurrencyUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getConversionTypeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getPaymentMethodUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getPaymentAccountDate();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getCustomerBankAccountUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getOrderUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+*/
+proto.data.CreateRefundReferenceRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string sales_representative_uuid = 3;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getSalesRepresentativeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setSalesRepresentativeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional Decimal amount = 5;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 5));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+*/
+proto.data.CreateRefundReferenceRequest.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string payment_date = 6;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getPaymentDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setPaymentDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string tender_type_code = 7;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getTenderTypeCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setTenderTypeCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string currency_uuid = 8;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getCurrencyUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setCurrencyUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string conversion_type_uuid = 9;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getConversionTypeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setConversionTypeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string payment_method_uuid = 10;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getPaymentMethodUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setPaymentMethodUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string payment_account_date = 11;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getPaymentAccountDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setPaymentAccountDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string customer_bank_account_uuid = 12;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getCustomerBankAccountUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setCustomerBankAccountUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string order_uuid = 13;
+ * @return {string}
+ */
+proto.data.CreateRefundReferenceRequest.prototype.getOrderUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateRefundReferenceRequest} returns this
+ */
+proto.data.CreateRefundReferenceRequest.prototype.setOrderUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.RefundReference.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.RefundReference.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.RefundReference} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.RefundReference.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    salesRepresentative: (f = msg.getSalesRepresentative()) && proto_core_functionality_pb.SalesRepresentative.toObject(includeInstance, f),
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    amount: (f = msg.getAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    paymentDate: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    currency: (f = msg.getCurrency()) && proto_core_functionality_pb.Currency.toObject(includeInstance, f),
+    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    paymentAccountDate: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    customerBankAccountUuid: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    orderUuid: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    isPaid: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.RefundReference}
+ */
+proto.data.RefundReference.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.RefundReference;
+  return proto.data.RefundReference.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.RefundReference} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.RefundReference}
+ */
+proto.data.RefundReference.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 4:
+      var value = new proto_core_functionality_pb.SalesRepresentative;
+      reader.readMessage(value,proto_core_functionality_pb.SalesRepresentative.deserializeBinaryFromReader);
+      msg.setSalesRepresentative(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 6:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentDate(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenderTypeCode(value);
+      break;
+    case 9:
+      var value = new proto_core_functionality_pb.Currency;
+      reader.readMessage(value,proto_core_functionality_pb.Currency.deserializeBinaryFromReader);
+      msg.setCurrency(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentMethodUuid(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentAccountDate(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerBankAccountUuid(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderUuid(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsPaid(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.RefundReference.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.RefundReference.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.RefundReference} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.RefundReference.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getSalesRepresentative();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto_core_functionality_pb.SalesRepresentative.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getPaymentDate();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getTenderTypeCode();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getCurrency();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto_core_functionality_pb.Currency.serializeBinaryToWriter
+    );
+  }
+  f = message.getPaymentMethodUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getPaymentAccountDate();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getCustomerBankAccountUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getOrderUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getIsPaid();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 id = 1;
+ * @return {number}
+ */
+proto.data.RefundReference.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string uuid = 2;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string pos_uuid = 3;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional SalesRepresentative sales_representative = 4;
+ * @return {?proto.data.SalesRepresentative}
+ */
+proto.data.RefundReference.prototype.getSalesRepresentative = function() {
+  return /** @type{?proto.data.SalesRepresentative} */ (
+    jspb.Message.getWrapperField(this, proto_core_functionality_pb.SalesRepresentative, 4));
+};
+
+
+/**
+ * @param {?proto.data.SalesRepresentative|undefined} value
+ * @return {!proto.data.RefundReference} returns this
+*/
+proto.data.RefundReference.prototype.setSalesRepresentative = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.clearSalesRepresentative = function() {
+  return this.setSalesRepresentative(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.RefundReference.prototype.hasSalesRepresentative = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional Decimal amount = 6;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.RefundReference.prototype.getAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 6));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.RefundReference} returns this
+*/
+proto.data.RefundReference.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.RefundReference.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string payment_date = 7;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getPaymentDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setPaymentDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string tender_type_code = 8;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getTenderTypeCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setTenderTypeCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional Currency currency = 9;
+ * @return {?proto.data.Currency}
+ */
+proto.data.RefundReference.prototype.getCurrency = function() {
+  return /** @type{?proto.data.Currency} */ (
+    jspb.Message.getWrapperField(this, proto_core_functionality_pb.Currency, 9));
+};
+
+
+/**
+ * @param {?proto.data.Currency|undefined} value
+ * @return {!proto.data.RefundReference} returns this
+*/
+proto.data.RefundReference.prototype.setCurrency = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.clearCurrency = function() {
+  return this.setCurrency(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.RefundReference.prototype.hasCurrency = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string payment_method_uuid = 10;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getPaymentMethodUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setPaymentMethodUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string payment_account_date = 11;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getPaymentAccountDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setPaymentAccountDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string customer_bank_account_uuid = 12;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getCustomerBankAccountUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setCustomerBankAccountUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string order_uuid = 13;
+ * @return {string}
+ */
+proto.data.RefundReference.prototype.getOrderUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setOrderUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional bool is_paid = 14;
+ * @return {boolean}
+ */
+proto.data.RefundReference.prototype.getIsPaid = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.RefundReference} returns this
+ */
+proto.data.RefundReference.prototype.setIsPaid = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListRefundReferencesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListRefundReferencesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListRefundReferencesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListRefundReferencesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    customerUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    orderUuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListRefundReferencesRequest}
+ */
+proto.data.ListRefundReferencesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListRefundReferencesRequest;
+  return proto.data.ListRefundReferencesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListRefundReferencesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListRefundReferencesRequest}
+ */
+proto.data.ListRefundReferencesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerUuid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderUuid(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListRefundReferencesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListRefundReferencesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListRefundReferencesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListRefundReferencesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCustomerUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getOrderUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+*/
+proto.data.ListRefundReferencesRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.ListRefundReferencesRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string customer_uuid = 3;
+ * @return {string}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getCustomerUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.setCustomerUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string order_uuid = 4;
+ * @return {string}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getOrderUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.setOrderUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int32 page_size = 5;
+ * @return {number}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string page_token = 6;
+ * @return {string}
+ */
+proto.data.ListRefundReferencesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListRefundReferencesRequest} returns this
+ */
+proto.data.ListRefundReferencesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.ListRefundReferencesResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListRefundReferencesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListRefundReferencesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListRefundReferencesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListRefundReferencesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recordCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    refundReferencesList: jspb.Message.toObjectList(msg.getRefundReferencesList(),
+    proto.data.RefundReference.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListRefundReferencesResponse}
+ */
+proto.data.ListRefundReferencesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListRefundReferencesResponse;
+  return proto.data.ListRefundReferencesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListRefundReferencesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListRefundReferencesResponse}
+ */
+proto.data.ListRefundReferencesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRecordCount(value);
+      break;
+    case 2:
+      var value = new proto.data.RefundReference;
+      reader.readMessage(value,proto.data.RefundReference.deserializeBinaryFromReader);
+      msg.addRefundReferences(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListRefundReferencesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListRefundReferencesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListRefundReferencesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListRefundReferencesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecordCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getRefundReferencesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.data.RefundReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 record_count = 1;
+ * @return {number}
+ */
+proto.data.ListRefundReferencesResponse.prototype.getRecordCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListRefundReferencesResponse} returns this
+ */
+proto.data.ListRefundReferencesResponse.prototype.setRecordCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated RefundReference refund_references = 2;
+ * @return {!Array<!proto.data.RefundReference>}
+ */
+proto.data.ListRefundReferencesResponse.prototype.getRefundReferencesList = function() {
+  return /** @type{!Array<!proto.data.RefundReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.RefundReference, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.data.RefundReference>} value
+ * @return {!proto.data.ListRefundReferencesResponse} returns this
+*/
+proto.data.ListRefundReferencesResponse.prototype.setRefundReferencesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.data.RefundReference=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.RefundReference}
+ */
+proto.data.ListRefundReferencesResponse.prototype.addRefundReferences = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.data.RefundReference, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.ListRefundReferencesResponse} returns this
+ */
+proto.data.ListRefundReferencesResponse.prototype.clearRefundReferencesList = function() {
+  return this.setRefundReferencesList([]);
+};
+
+
+/**
+ * optional string next_page_token = 3;
+ * @return {string}
+ */
+proto.data.ListRefundReferencesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListRefundReferencesResponse} returns this
+ */
+proto.data.ListRefundReferencesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.PaymentSummary.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.PaymentSummary.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.PaymentSummary} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.PaymentSummary.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    paymentMethodName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    currency: (f = msg.getCurrency()) && proto_core_functionality_pb.Currency.toObject(includeInstance, f),
+    isRefund: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    amount: (f = msg.getAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.PaymentSummary}
+ */
+proto.data.PaymentSummary.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.PaymentSummary;
+  return proto.data.PaymentSummary.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.PaymentSummary} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.PaymentSummary}
+ */
+proto.data.PaymentSummary.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentMethodUuid(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPaymentMethodName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenderTypeCode(value);
+      break;
+    case 4:
+      var value = new proto_core_functionality_pb.Currency;
+      reader.readMessage(value,proto_core_functionality_pb.Currency.deserializeBinaryFromReader);
+      msg.setCurrency(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRefund(value);
+      break;
+    case 6:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.PaymentSummary.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.PaymentSummary.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.PaymentSummary} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.PaymentSummary.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPaymentMethodUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPaymentMethodName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTenderTypeCode();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCurrency();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto_core_functionality_pb.Currency.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsRefund();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string payment_method_uuid = 1;
+ * @return {string}
+ */
+proto.data.PaymentSummary.prototype.getPaymentMethodUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.setPaymentMethodUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string payment_method_name = 2;
+ * @return {string}
+ */
+proto.data.PaymentSummary.prototype.getPaymentMethodName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.setPaymentMethodName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string tender_type_code = 3;
+ * @return {string}
+ */
+proto.data.PaymentSummary.prototype.getTenderTypeCode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.setTenderTypeCode = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional Currency currency = 4;
+ * @return {?proto.data.Currency}
+ */
+proto.data.PaymentSummary.prototype.getCurrency = function() {
+  return /** @type{?proto.data.Currency} */ (
+    jspb.Message.getWrapperField(this, proto_core_functionality_pb.Currency, 4));
+};
+
+
+/**
+ * @param {?proto.data.Currency|undefined} value
+ * @return {!proto.data.PaymentSummary} returns this
+*/
+proto.data.PaymentSummary.prototype.setCurrency = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.clearCurrency = function() {
+  return this.setCurrency(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.PaymentSummary.prototype.hasCurrency = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool is_refund = 5;
+ * @return {boolean}
+ */
+proto.data.PaymentSummary.prototype.getIsRefund = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.setIsRefund = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional Decimal amount = 6;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.PaymentSummary.prototype.getAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 6));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.PaymentSummary} returns this
+*/
+proto.data.PaymentSummary.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.PaymentSummary} returns this
+ */
+proto.data.PaymentSummary.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.PaymentSummary.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListCashMovementsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListCashMovementsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListCashMovementsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashMovementsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    businessPartnerUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    isOnlyProcessed: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    isOnlyRefund: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 8, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListCashMovementsRequest}
+ */
+proto.data.ListCashMovementsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListCashMovementsRequest;
+  return proto.data.ListCashMovementsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListCashMovementsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListCashMovementsRequest}
+ */
+proto.data.ListCashMovementsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBusinessPartnerUuid(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyProcessed(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyRefund(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSalesRepresentativeUuid(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListCashMovementsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListCashMovementsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListCashMovementsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashMovementsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getBusinessPartnerUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getIsOnlyProcessed();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getIsOnlyRefund();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getSalesRepresentativeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.ListCashMovementsRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+*/
+proto.data.ListCashMovementsRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.ListCashMovementsRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.ListCashMovementsRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string business_partner_uuid = 3;
+ * @return {string}
+ */
+proto.data.ListCashMovementsRequest.prototype.getBusinessPartnerUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setBusinessPartnerUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bool is_only_processed = 4;
+ * @return {boolean}
+ */
+proto.data.ListCashMovementsRequest.prototype.getIsOnlyProcessed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setIsOnlyProcessed = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_only_refund = 5;
+ * @return {boolean}
+ */
+proto.data.ListCashMovementsRequest.prototype.getIsOnlyRefund = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setIsOnlyRefund = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional string sales_representative_uuid = 6;
+ * @return {string}
+ */
+proto.data.ListCashMovementsRequest.prototype.getSalesRepresentativeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setSalesRepresentativeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional int32 page_size = 7;
+ * @return {number}
+ */
+proto.data.ListCashMovementsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional string page_token = 8;
+ * @return {string}
+ */
+proto.data.ListCashMovementsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashMovementsRequest} returns this
+ */
+proto.data.ListCashMovementsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.ListCashMovementsResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListCashMovementsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListCashMovementsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListCashMovementsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashMovementsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recordCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    cashMovementsList: jspb.Message.toObjectList(msg.getCashMovementsList(),
+    proto.data.Payment.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListCashMovementsResponse}
+ */
+proto.data.ListCashMovementsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListCashMovementsResponse;
+  return proto.data.ListCashMovementsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListCashMovementsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListCashMovementsResponse}
+ */
+proto.data.ListCashMovementsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRecordCount(value);
+      break;
+    case 2:
+      var value = new proto.data.Payment;
+      reader.readMessage(value,proto.data.Payment.deserializeBinaryFromReader);
+      msg.addCashMovements(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListCashMovementsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListCashMovementsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListCashMovementsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashMovementsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecordCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getCashMovementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.data.Payment.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 record_count = 1;
+ * @return {number}
+ */
+proto.data.ListCashMovementsResponse.prototype.getRecordCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListCashMovementsResponse} returns this
+ */
+proto.data.ListCashMovementsResponse.prototype.setRecordCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated Payment cash_movements = 2;
+ * @return {!Array<!proto.data.Payment>}
+ */
+proto.data.ListCashMovementsResponse.prototype.getCashMovementsList = function() {
+  return /** @type{!Array<!proto.data.Payment>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.Payment, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.data.Payment>} value
+ * @return {!proto.data.ListCashMovementsResponse} returns this
+*/
+proto.data.ListCashMovementsResponse.prototype.setCashMovementsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.data.Payment=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.Payment}
+ */
+proto.data.ListCashMovementsResponse.prototype.addCashMovements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.data.Payment, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.ListCashMovementsResponse} returns this
+ */
+proto.data.ListCashMovementsResponse.prototype.clearCashMovementsList = function() {
+  return this.setCashMovementsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 3;
+ * @return {string}
+ */
+proto.data.ListCashMovementsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashMovementsResponse} returns this
+ */
+proto.data.ListCashMovementsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListCashSummaryMovementsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListCashSummaryMovementsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashSummaryMovementsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    isOnlyProcessed: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    isOnlyRefund: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListCashSummaryMovementsRequest}
+ */
+proto.data.ListCashSummaryMovementsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListCashSummaryMovementsRequest;
+  return proto.data.ListCashSummaryMovementsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListCashSummaryMovementsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListCashSummaryMovementsRequest}
+ */
+proto.data.ListCashSummaryMovementsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyProcessed(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyRefund(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListCashSummaryMovementsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListCashSummaryMovementsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashSummaryMovementsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getIsOnlyProcessed();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getIsOnlyRefund();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+*/
+proto.data.ListCashSummaryMovementsRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool is_only_processed = 3;
+ * @return {boolean}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getIsOnlyProcessed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.setIsOnlyProcessed = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool is_only_refund = 4;
+ * @return {boolean}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getIsOnlyRefund = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.setIsOnlyRefund = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional int32 page_size = 5;
+ * @return {number}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string page_token = 6;
+ * @return {string}
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashSummaryMovementsRequest} returns this
+ */
+proto.data.ListCashSummaryMovementsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.ListCashSummaryMovementsResponse.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListCashSummaryMovementsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListCashSummaryMovementsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashSummaryMovementsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recordCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    id: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    cashMovementsList: jspb.Message.toObjectList(msg.getCashMovementsList(),
+    proto.data.PaymentSummary.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 5, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListCashSummaryMovementsResponse}
+ */
+proto.data.ListCashSummaryMovementsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListCashSummaryMovementsResponse;
+  return proto.data.ListCashSummaryMovementsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListCashSummaryMovementsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListCashSummaryMovementsResponse}
+ */
+proto.data.ListCashSummaryMovementsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRecordCount(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 4:
+      var value = new proto.data.PaymentSummary;
+      reader.readMessage(value,proto.data.PaymentSummary.deserializeBinaryFromReader);
+      msg.addCashMovements(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListCashSummaryMovementsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListCashSummaryMovementsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListCashSummaryMovementsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecordCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCashMovementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.data.PaymentSummary.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 record_count = 1;
+ * @return {number}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.getRecordCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.setRecordCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int32 id = 2;
+ * @return {number}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string uuid = 3;
+ * @return {string}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated PaymentSummary cash_movements = 4;
+ * @return {!Array<!proto.data.PaymentSummary>}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.getCashMovementsList = function() {
+  return /** @type{!Array<!proto.data.PaymentSummary>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.PaymentSummary, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.data.PaymentSummary>} value
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+*/
+proto.data.ListCashSummaryMovementsResponse.prototype.setCashMovementsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.data.PaymentSummary=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.PaymentSummary}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.addCashMovements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.data.PaymentSummary, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.clearCashMovementsList = function() {
+  return this.setCashMovementsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 5;
+ * @return {string}
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListCashSummaryMovementsResponse} returns this
+ */
+proto.data.ListCashSummaryMovementsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.CashClosing.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.CashClosing.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.CashClosing} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashClosing.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    documentNo: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    documentType: (f = msg.getDocumentType()) && proto_core_functionality_pb.DocumentType.toObject(includeInstance, f),
+    documentStatus: (f = msg.getDocumentStatus()) && proto_base_data_type_pb.DocumentStatus.toObject(includeInstance, f),
+    description: jspb.Message.getFieldWithDefault(msg, 7, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.CashClosing}
+ */
+proto.data.CashClosing.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.CashClosing;
+  return proto.data.CashClosing.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.CashClosing} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.CashClosing}
+ */
+proto.data.CashClosing.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDocumentNo(value);
+      break;
+    case 5:
+      var value = new proto_core_functionality_pb.DocumentType;
+      reader.readMessage(value,proto_core_functionality_pb.DocumentType.deserializeBinaryFromReader);
+      msg.setDocumentType(value);
+      break;
+    case 6:
+      var value = new proto_base_data_type_pb.DocumentStatus;
+      reader.readMessage(value,proto_base_data_type_pb.DocumentStatus.deserializeBinaryFromReader);
+      msg.setDocumentStatus(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.CashClosing.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.CashClosing.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.CashClosing} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashClosing.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getDocumentNo();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getDocumentType();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto_core_functionality_pb.DocumentType.serializeBinaryToWriter
+    );
+  }
+  f = message.getDocumentStatus();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto_base_data_type_pb.DocumentStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.CashClosing.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.CashClosing} returns this
+*/
+proto.data.CashClosing.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashClosing.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string uuid = 2;
+ * @return {string}
+ */
+proto.data.CashClosing.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional int32 id = 3;
+ * @return {number}
+ */
+proto.data.CashClosing.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string document_no = 4;
+ * @return {string}
+ */
+proto.data.CashClosing.prototype.getDocumentNo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.setDocumentNo = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional DocumentType document_type = 5;
+ * @return {?proto.data.DocumentType}
+ */
+proto.data.CashClosing.prototype.getDocumentType = function() {
+  return /** @type{?proto.data.DocumentType} */ (
+    jspb.Message.getWrapperField(this, proto_core_functionality_pb.DocumentType, 5));
+};
+
+
+/**
+ * @param {?proto.data.DocumentType|undefined} value
+ * @return {!proto.data.CashClosing} returns this
+*/
+proto.data.CashClosing.prototype.setDocumentType = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.clearDocumentType = function() {
+  return this.setDocumentType(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashClosing.prototype.hasDocumentType = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional DocumentStatus document_status = 6;
+ * @return {?proto.data.DocumentStatus}
+ */
+proto.data.CashClosing.prototype.getDocumentStatus = function() {
+  return /** @type{?proto.data.DocumentStatus} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.DocumentStatus, 6));
+};
+
+
+/**
+ * @param {?proto.data.DocumentStatus|undefined} value
+ * @return {!proto.data.CashClosing} returns this
+*/
+proto.data.CashClosing.prototype.setDocumentStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.clearDocumentStatus = function() {
+  return this.setDocumentStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashClosing.prototype.hasDocumentStatus = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string description = 7;
+ * @return {string}
+ */
+proto.data.CashClosing.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosing} returns this
+ */
+proto.data.CashClosing.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.CashClosingRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.CashClosingRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.CashClosingRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashClosingRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    uuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    collectingAgentUuid: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.CashClosingRequest}
+ */
+proto.data.CashClosingRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.CashClosingRequest;
+  return proto.data.CashClosingRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.CashClosingRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.CashClosingRequest}
+ */
+proto.data.CashClosingRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCollectingAgentUuid(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.CashClosingRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.CashClosingRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.CashClosingRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashClosingRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getCollectingAgentUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.CashClosingRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.CashClosingRequest} returns this
+*/
+proto.data.CashClosingRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashClosingRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.CashClosingRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string uuid = 3;
+ * @return {string}
+ */
+proto.data.CashClosingRequest.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 id = 4;
+ * @return {number}
+ */
+proto.data.CashClosingRequest.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string collecting_agent_uuid = 5;
+ * @return {string}
+ */
+proto.data.CashClosingRequest.prototype.getCollectingAgentUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.setCollectingAgentUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string description = 6;
+ * @return {string}
+ */
+proto.data.CashClosingRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashClosingRequest} returns this
+ */
+proto.data.CashClosingRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.CashWithdrawalRequest.repeatedFields_ = [5];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.CashWithdrawalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.CashWithdrawalRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.CashWithdrawalRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashWithdrawalRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    collectingAgentUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
+    proto.data.CreatePaymentRequest.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.CashWithdrawalRequest}
+ */
+proto.data.CashWithdrawalRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.CashWithdrawalRequest;
+  return proto.data.CashWithdrawalRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.CashWithdrawalRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.CashWithdrawalRequest}
+ */
+proto.data.CashWithdrawalRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCollectingAgentUuid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 5:
+      var value = new proto.data.CreatePaymentRequest;
+      reader.readMessage(value,proto.data.CreatePaymentRequest.deserializeBinaryFromReader);
+      msg.addPayments(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.CashWithdrawalRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.CashWithdrawalRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.CashWithdrawalRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashWithdrawalRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCollectingAgentUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPaymentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.data.CreatePaymentRequest.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.CashWithdrawalRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+*/
+proto.data.CashWithdrawalRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+ */
+proto.data.CashWithdrawalRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashWithdrawalRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.CashWithdrawalRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+ */
+proto.data.CashWithdrawalRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string collecting_agent_uuid = 3;
+ * @return {string}
+ */
+proto.data.CashWithdrawalRequest.prototype.getCollectingAgentUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+ */
+proto.data.CashWithdrawalRequest.prototype.setCollectingAgentUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.data.CashWithdrawalRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+ */
+proto.data.CashWithdrawalRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * repeated CreatePaymentRequest payments = 5;
+ * @return {!Array<!proto.data.CreatePaymentRequest>}
+ */
+proto.data.CashWithdrawalRequest.prototype.getPaymentsList = function() {
+  return /** @type{!Array<!proto.data.CreatePaymentRequest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.CreatePaymentRequest, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.data.CreatePaymentRequest>} value
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+*/
+proto.data.CashWithdrawalRequest.prototype.setPaymentsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.data.CreatePaymentRequest=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.CreatePaymentRequest}
+ */
+proto.data.CashWithdrawalRequest.prototype.addPayments = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.data.CreatePaymentRequest, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.CashWithdrawalRequest} returns this
+ */
+proto.data.CashWithdrawalRequest.prototype.clearPaymentsList = function() {
+  return this.setPaymentsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.CashOpeningRequest.repeatedFields_ = [5];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.CashOpeningRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.CashOpeningRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.CashOpeningRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashOpeningRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    collectingAgentUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    paymentsList: jspb.Message.toObjectList(msg.getPaymentsList(),
+    proto.data.CreatePaymentRequest.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.CashOpeningRequest}
+ */
+proto.data.CashOpeningRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.CashOpeningRequest;
+  return proto.data.CashOpeningRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.CashOpeningRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.CashOpeningRequest}
+ */
+proto.data.CashOpeningRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCollectingAgentUuid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 5:
+      var value = new proto.data.CreatePaymentRequest;
+      reader.readMessage(value,proto.data.CreatePaymentRequest.deserializeBinaryFromReader);
+      msg.addPayments(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.CashOpeningRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.CashOpeningRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.CashOpeningRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.CashOpeningRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCollectingAgentUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPaymentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.data.CreatePaymentRequest.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.CashOpeningRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.CashOpeningRequest} returns this
+*/
+proto.data.CashOpeningRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.CashOpeningRequest} returns this
+ */
+proto.data.CashOpeningRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.CashOpeningRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.CashOpeningRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashOpeningRequest} returns this
+ */
+proto.data.CashOpeningRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string collecting_agent_uuid = 3;
+ * @return {string}
+ */
+proto.data.CashOpeningRequest.prototype.getCollectingAgentUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashOpeningRequest} returns this
+ */
+proto.data.CashOpeningRequest.prototype.setCollectingAgentUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.data.CashOpeningRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CashOpeningRequest} returns this
+ */
+proto.data.CashOpeningRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * repeated CreatePaymentRequest payments = 5;
+ * @return {!Array<!proto.data.CreatePaymentRequest>}
+ */
+proto.data.CashOpeningRequest.prototype.getPaymentsList = function() {
+  return /** @type{!Array<!proto.data.CreatePaymentRequest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.CreatePaymentRequest, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.data.CreatePaymentRequest>} value
+ * @return {!proto.data.CashOpeningRequest} returns this
+*/
+proto.data.CashOpeningRequest.prototype.setPaymentsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.data.CreatePaymentRequest=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.CreatePaymentRequest}
+ */
+proto.data.CashOpeningRequest.prototype.addPayments = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.data.CreatePaymentRequest, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.CashOpeningRequest} returns this
+ */
+proto.data.CashOpeningRequest.prototype.clearPaymentsList = function() {
+  return this.setPaymentsList([]);
+};
+
+
 
 
 
@@ -13057,6 +18038,717 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.data.ListAvailableDiscountsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListAvailableDiscountsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListAvailableDiscountsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListAvailableDiscountsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListAvailableDiscountsRequest}
+ */
+proto.data.ListAvailableDiscountsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListAvailableDiscountsRequest;
+  return proto.data.ListAvailableDiscountsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListAvailableDiscountsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListAvailableDiscountsRequest}
+ */
+proto.data.ListAvailableDiscountsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto_client_pb.ClientRequest;
+      reader.readMessage(value,proto_client_pb.ClientRequest.deserializeBinaryFromReader);
+      msg.setClientRequest(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPosUuid(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListAvailableDiscountsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListAvailableDiscountsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListAvailableDiscountsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientRequest();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto_client_pb.ClientRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getPosUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ClientRequest client_request = 1;
+ * @return {?proto.data.ClientRequest}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.getClientRequest = function() {
+  return /** @type{?proto.data.ClientRequest} */ (
+    jspb.Message.getWrapperField(this, proto_client_pb.ClientRequest, 1));
+};
+
+
+/**
+ * @param {?proto.data.ClientRequest|undefined} value
+ * @return {!proto.data.ListAvailableDiscountsRequest} returns this
+*/
+proto.data.ListAvailableDiscountsRequest.prototype.setClientRequest = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.ListAvailableDiscountsRequest} returns this
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.clearClientRequest = function() {
+  return this.setClientRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.hasClientRequest = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string pos_uuid = 2;
+ * @return {string}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.getPosUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListAvailableDiscountsRequest} returns this
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.setPosUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListAvailableDiscountsRequest} returns this
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListAvailableDiscountsRequest} returns this
+ */
+proto.data.ListAvailableDiscountsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.data.ListAvailableDiscountsResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.ListAvailableDiscountsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.ListAvailableDiscountsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListAvailableDiscountsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    recordCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    discountsList: jspb.Message.toObjectList(msg.getDiscountsList(),
+    proto.data.AvailableDiscount.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.ListAvailableDiscountsResponse}
+ */
+proto.data.ListAvailableDiscountsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.ListAvailableDiscountsResponse;
+  return proto.data.ListAvailableDiscountsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.ListAvailableDiscountsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.ListAvailableDiscountsResponse}
+ */
+proto.data.ListAvailableDiscountsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRecordCount(value);
+      break;
+    case 2:
+      var value = new proto.data.AvailableDiscount;
+      reader.readMessage(value,proto.data.AvailableDiscount.deserializeBinaryFromReader);
+      msg.addDiscounts(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.ListAvailableDiscountsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.ListAvailableDiscountsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.ListAvailableDiscountsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRecordCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getDiscountsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.data.AvailableDiscount.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 record_count = 1;
+ * @return {number}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.getRecordCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.ListAvailableDiscountsResponse} returns this
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.setRecordCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated AvailableDiscount discounts = 2;
+ * @return {!Array<!proto.data.AvailableDiscount>}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.getDiscountsList = function() {
+  return /** @type{!Array<!proto.data.AvailableDiscount>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.data.AvailableDiscount, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.data.AvailableDiscount>} value
+ * @return {!proto.data.ListAvailableDiscountsResponse} returns this
+*/
+proto.data.ListAvailableDiscountsResponse.prototype.setDiscountsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.data.AvailableDiscount=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.data.AvailableDiscount}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.addDiscounts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.data.AvailableDiscount, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.data.ListAvailableDiscountsResponse} returns this
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.clearDiscountsList = function() {
+  return this.setDiscountsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 3;
+ * @return {string}
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListAvailableDiscountsResponse} returns this
+ */
+proto.data.ListAvailableDiscountsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.data.AvailableDiscount.prototype.toObject = function(opt_includeInstance) {
+  return proto.data.AvailableDiscount.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.data.AvailableDiscount} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.AvailableDiscount.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    uuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    key: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isPosRequiredPin: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.data.AvailableDiscount}
+ */
+proto.data.AvailableDiscount.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.data.AvailableDiscount;
+  return proto.data.AvailableDiscount.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.data.AvailableDiscount} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.data.AvailableDiscount}
+ */
+proto.data.AvailableDiscount.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUuid(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKey(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsPosRequiredPin(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.data.AvailableDiscount.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.data.AvailableDiscount.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.data.AvailableDiscount} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.data.AvailableDiscount.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getKey();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getIsPosRequiredPin();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 id = 2;
+ * @return {number}
+ */
+proto.data.AvailableDiscount.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.AvailableDiscount} returns this
+ */
+proto.data.AvailableDiscount.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string uuid = 3;
+ * @return {string}
+ */
+proto.data.AvailableDiscount.prototype.getUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.AvailableDiscount} returns this
+ */
+proto.data.AvailableDiscount.prototype.setUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string key = 4;
+ * @return {string}
+ */
+proto.data.AvailableDiscount.prototype.getKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.AvailableDiscount} returns this
+ */
+proto.data.AvailableDiscount.prototype.setKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string name = 5;
+ * @return {string}
+ */
+proto.data.AvailableDiscount.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.AvailableDiscount} returns this
+ */
+proto.data.AvailableDiscount.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool is_pos_required_pin = 6;
+ * @return {boolean}
+ */
+proto.data.AvailableDiscount.prototype.getIsPosRequiredPin = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.AvailableDiscount} returns this
+ */
+proto.data.AvailableDiscount.prototype.setIsPosRequiredPin = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.data.AvailableDocumentType.prototype.toObject = function(opt_includeInstance) {
   return proto.data.AvailableDocumentType.toObject(opt_includeInstance, this);
 };
@@ -16544,15 +22236,16 @@ proto.data.ListOrdersRequest.toObject = function(includeInstance, msg) {
     businessPartnerUuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
     grandTotal: (f = msg.getGrandTotal()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
     openAmount: (f = msg.getOpenAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
-    isPaid: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    isProcessed: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    isAisleSeller: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    isInvoiced: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    dateOrderedFrom: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    dateOrderedTo: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    isWaitingForPay: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    isOnlyProcessed: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    isOnlyAisleSeller: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    isWaitingForInvoice: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    isWaitingForShipment: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
+    dateOrderedFrom: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    dateOrderedTo: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 16, ""),
     criteria: (f = msg.getCriteria()) && proto_base_data_type_pb.Criteria.toObject(includeInstance, f)
   };
 
@@ -16619,41 +22312,45 @@ proto.data.ListOrdersRequest.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsPaid(value);
+      msg.setIsWaitingForPay(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsProcessed(value);
+      msg.setIsOnlyProcessed(value);
       break;
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsAisleSeller(value);
+      msg.setIsOnlyAisleSeller(value);
       break;
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsInvoiced(value);
+      msg.setIsWaitingForInvoice(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDateOrderedFrom(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsWaitingForShipment(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDateOrderedTo(value);
+      msg.setDateOrderedFrom(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSalesRepresentativeUuid(value);
+      msg.setDateOrderedTo(value);
       break;
     case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSalesRepresentativeUuid(value);
+      break;
+    case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageSize(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
-    case 16:
+    case 17:
       var value = new proto_base_data_type_pb.Criteria;
       reader.readMessage(value,proto_base_data_type_pb.Criteria.deserializeBinaryFromReader);
       msg.setCriteria(value);
@@ -16732,73 +22429,80 @@ proto.data.ListOrdersRequest.serializeBinaryToWriter = function(message, writer)
       proto_base_data_type_pb.Decimal.serializeBinaryToWriter
     );
   }
-  f = message.getIsPaid();
+  f = message.getIsWaitingForPay();
   if (f) {
     writer.writeBool(
       7,
       f
     );
   }
-  f = message.getIsProcessed();
+  f = message.getIsOnlyProcessed();
   if (f) {
     writer.writeBool(
       8,
       f
     );
   }
-  f = message.getIsAisleSeller();
+  f = message.getIsOnlyAisleSeller();
   if (f) {
     writer.writeBool(
       9,
       f
     );
   }
-  f = message.getIsInvoiced();
+  f = message.getIsWaitingForInvoice();
   if (f) {
     writer.writeBool(
       10,
       f
     );
   }
-  f = message.getDateOrderedFrom();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsWaitingForShipment();
+  if (f) {
+    writer.writeBool(
       11,
       f
     );
   }
-  f = message.getDateOrderedTo();
+  f = message.getDateOrderedFrom();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getSalesRepresentativeUuid();
+  f = message.getDateOrderedTo();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
+  f = message.getSalesRepresentativeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
   f = message.getPageSize();
   if (f !== 0) {
     writer.writeInt32(
-      14,
+      15,
       f
     );
   }
   f = message.getPageToken();
   if (f.length > 0) {
     writer.writeString(
-      15,
+      16,
       f
     );
   }
   f = message.getCriteria();
   if (f != null) {
     writer.writeMessage(
-      16,
+      17,
       f,
       proto_base_data_type_pb.Criteria.serializeBinaryToWriter
     );
@@ -16972,10 +22676,10 @@ proto.data.ListOrdersRequest.prototype.hasOpenAmount = function() {
 
 
 /**
- * optional bool is_paid = 7;
+ * optional bool is_waiting_for_pay = 7;
  * @return {boolean}
  */
-proto.data.ListOrdersRequest.prototype.getIsPaid = function() {
+proto.data.ListOrdersRequest.prototype.getIsWaitingForPay = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -16984,16 +22688,16 @@ proto.data.ListOrdersRequest.prototype.getIsPaid = function() {
  * @param {boolean} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setIsPaid = function(value) {
+proto.data.ListOrdersRequest.prototype.setIsWaitingForPay = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
 /**
- * optional bool is_processed = 8;
+ * optional bool is_only_processed = 8;
  * @return {boolean}
  */
-proto.data.ListOrdersRequest.prototype.getIsProcessed = function() {
+proto.data.ListOrdersRequest.prototype.getIsOnlyProcessed = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -17002,16 +22706,16 @@ proto.data.ListOrdersRequest.prototype.getIsProcessed = function() {
  * @param {boolean} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setIsProcessed = function(value) {
+proto.data.ListOrdersRequest.prototype.setIsOnlyProcessed = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional bool is_aisle_seller = 9;
+ * optional bool is_only_aisle_seller = 9;
  * @return {boolean}
  */
-proto.data.ListOrdersRequest.prototype.getIsAisleSeller = function() {
+proto.data.ListOrdersRequest.prototype.getIsOnlyAisleSeller = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -17020,16 +22724,16 @@ proto.data.ListOrdersRequest.prototype.getIsAisleSeller = function() {
  * @param {boolean} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setIsAisleSeller = function(value) {
+proto.data.ListOrdersRequest.prototype.setIsOnlyAisleSeller = function(value) {
   return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool is_invoiced = 10;
+ * optional bool is_waiting_for_invoice = 10;
  * @return {boolean}
  */
-proto.data.ListOrdersRequest.prototype.getIsInvoiced = function() {
+proto.data.ListOrdersRequest.prototype.getIsWaitingForInvoice = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
@@ -17038,34 +22742,34 @@ proto.data.ListOrdersRequest.prototype.getIsInvoiced = function() {
  * @param {boolean} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setIsInvoiced = function(value) {
+proto.data.ListOrdersRequest.prototype.setIsWaitingForInvoice = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional string date_ordered_from = 11;
+ * optional bool is_waiting_for_shipment = 11;
+ * @return {boolean}
+ */
+proto.data.ListOrdersRequest.prototype.getIsWaitingForShipment = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListOrdersRequest} returns this
+ */
+proto.data.ListOrdersRequest.prototype.setIsWaitingForShipment = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
+};
+
+
+/**
+ * optional string date_ordered_from = 12;
  * @return {string}
  */
 proto.data.ListOrdersRequest.prototype.getDateOrderedFrom = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.data.ListOrdersRequest} returns this
- */
-proto.data.ListOrdersRequest.prototype.setDateOrderedFrom = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
-};
-
-
-/**
- * optional string date_ordered_to = 12;
- * @return {string}
- */
-proto.data.ListOrdersRequest.prototype.getDateOrderedTo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -17074,16 +22778,16 @@ proto.data.ListOrdersRequest.prototype.getDateOrderedTo = function() {
  * @param {string} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setDateOrderedTo = function(value) {
+proto.data.ListOrdersRequest.prototype.setDateOrderedFrom = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string sales_representative_uuid = 13;
+ * optional string date_ordered_to = 13;
  * @return {string}
  */
-proto.data.ListOrdersRequest.prototype.getSalesRepresentativeUuid = function() {
+proto.data.ListOrdersRequest.prototype.getDateOrderedTo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -17092,17 +22796,35 @@ proto.data.ListOrdersRequest.prototype.getSalesRepresentativeUuid = function() {
  * @param {string} value
  * @return {!proto.data.ListOrdersRequest} returns this
  */
-proto.data.ListOrdersRequest.prototype.setSalesRepresentativeUuid = function(value) {
+proto.data.ListOrdersRequest.prototype.setDateOrderedTo = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional int32 page_size = 14;
+ * optional string sales_representative_uuid = 14;
+ * @return {string}
+ */
+proto.data.ListOrdersRequest.prototype.getSalesRepresentativeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.ListOrdersRequest} returns this
+ */
+proto.data.ListOrdersRequest.prototype.setSalesRepresentativeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional int32 page_size = 15;
  * @return {number}
  */
 proto.data.ListOrdersRequest.prototype.getPageSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
@@ -17111,16 +22833,16 @@ proto.data.ListOrdersRequest.prototype.getPageSize = function() {
  * @return {!proto.data.ListOrdersRequest} returns this
  */
 proto.data.ListOrdersRequest.prototype.setPageSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 14, value);
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
 /**
- * optional string page_token = 15;
+ * optional string page_token = 16;
  * @return {string}
  */
 proto.data.ListOrdersRequest.prototype.getPageToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
@@ -17129,17 +22851,17 @@ proto.data.ListOrdersRequest.prototype.getPageToken = function() {
  * @return {!proto.data.ListOrdersRequest} returns this
  */
 proto.data.ListOrdersRequest.prototype.setPageToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 15, value);
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
- * optional Criteria criteria = 16;
+ * optional Criteria criteria = 17;
  * @return {?proto.data.Criteria}
  */
 proto.data.ListOrdersRequest.prototype.getCriteria = function() {
   return /** @type{?proto.data.Criteria} */ (
-    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Criteria, 16));
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Criteria, 17));
 };
 
 
@@ -17148,7 +22870,7 @@ proto.data.ListOrdersRequest.prototype.getCriteria = function() {
  * @return {!proto.data.ListOrdersRequest} returns this
 */
 proto.data.ListOrdersRequest.prototype.setCriteria = function(value) {
-  return jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -17166,7 +22888,7 @@ proto.data.ListOrdersRequest.prototype.clearCriteria = function() {
  * @return {boolean}
  */
 proto.data.ListOrdersRequest.prototype.hasCriteria = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -18556,7 +24278,18 @@ proto.data.PointOfSales.toObject = function(includeInstance, msg) {
     maximumRefundAllowed: (f = msg.getMaximumRefundAllowed()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
     maximumDailyRefundAllowed: (f = msg.getMaximumDailyRefundAllowed()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
     refundReferenceCurrency: (f = msg.getRefundReferenceCurrency()) && proto_core_functionality_pb.Currency.toObject(includeInstance, f),
-    returnDocumentType: (f = msg.getReturnDocumentType()) && proto_core_functionality_pb.DocumentType.toObject(includeInstance, f)
+    returnDocumentType: (f = msg.getReturnDocumentType()) && proto_core_functionality_pb.DocumentType.toObject(includeInstance, f),
+    defaultCampaignUuid: jspb.Message.getFieldWithDefault(msg, 31, ""),
+    defaultOpeningChargeUuid: jspb.Message.getFieldWithDefault(msg, 32, ""),
+    defaultWithdrawalChargeUuid: jspb.Message.getFieldWithDefault(msg, 33, ""),
+    maximumDiscountAllowed: (f = msg.getMaximumDiscountAllowed()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    writeOffAmountTolerance: (f = msg.getWriteOffAmountTolerance()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    isAllowsAllocateSeller: jspb.Message.getBooleanFieldWithDefault(msg, 36, false),
+    isAllowsConcurrentUse: jspb.Message.getBooleanFieldWithDefault(msg, 37, false),
+    isConfirmCompleteShipment: jspb.Message.getBooleanFieldWithDefault(msg, 38, false),
+    isAllowsCashClosing: jspb.Message.getBooleanFieldWithDefault(msg, 39, false),
+    isAllowsCashOpening: jspb.Message.getBooleanFieldWithDefault(msg, 40, false),
+    isAllowsCashWithdrawal: jspb.Message.getBooleanFieldWithDefault(msg, 41, false)
   };
 
   if (includeInstance) {
@@ -18724,6 +24457,52 @@ proto.data.PointOfSales.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto_core_functionality_pb.DocumentType;
       reader.readMessage(value,proto_core_functionality_pb.DocumentType.deserializeBinaryFromReader);
       msg.setReturnDocumentType(value);
+      break;
+    case 31:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultCampaignUuid(value);
+      break;
+    case 32:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultOpeningChargeUuid(value);
+      break;
+    case 33:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultWithdrawalChargeUuid(value);
+      break;
+    case 34:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setMaximumDiscountAllowed(value);
+      break;
+    case 35:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setWriteOffAmountTolerance(value);
+      break;
+    case 36:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAllowsAllocateSeller(value);
+      break;
+    case 37:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAllowsConcurrentUse(value);
+      break;
+    case 38:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsConfirmCompleteShipment(value);
+      break;
+    case 39:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAllowsCashClosing(value);
+      break;
+    case 40:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAllowsCashOpening(value);
+      break;
+    case 41:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsAllowsCashWithdrawal(value);
       break;
     default:
       reader.skipField();
@@ -18974,6 +24753,85 @@ proto.data.PointOfSales.serializeBinaryToWriter = function(message, writer) {
       30,
       f,
       proto_core_functionality_pb.DocumentType.serializeBinaryToWriter
+    );
+  }
+  f = message.getDefaultCampaignUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      31,
+      f
+    );
+  }
+  f = message.getDefaultOpeningChargeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      32,
+      f
+    );
+  }
+  f = message.getDefaultWithdrawalChargeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      33,
+      f
+    );
+  }
+  f = message.getMaximumDiscountAllowed();
+  if (f != null) {
+    writer.writeMessage(
+      34,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getWriteOffAmountTolerance();
+  if (f != null) {
+    writer.writeMessage(
+      35,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsAllowsAllocateSeller();
+  if (f) {
+    writer.writeBool(
+      36,
+      f
+    );
+  }
+  f = message.getIsAllowsConcurrentUse();
+  if (f) {
+    writer.writeBool(
+      37,
+      f
+    );
+  }
+  f = message.getIsConfirmCompleteShipment();
+  if (f) {
+    writer.writeBool(
+      38,
+      f
+    );
+  }
+  f = message.getIsAllowsCashClosing();
+  if (f) {
+    writer.writeBool(
+      39,
+      f
+    );
+  }
+  f = message.getIsAllowsCashOpening();
+  if (f) {
+    writer.writeBool(
+      40,
+      f
+    );
+  }
+  f = message.getIsAllowsCashWithdrawal();
+  if (f) {
+    writer.writeBool(
+      41,
+      f
     );
   }
 };
@@ -19747,6 +25605,242 @@ proto.data.PointOfSales.prototype.hasReturnDocumentType = function() {
 };
 
 
+/**
+ * optional string default_campaign_uuid = 31;
+ * @return {string}
+ */
+proto.data.PointOfSales.prototype.getDefaultCampaignUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setDefaultCampaignUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 31, value);
+};
+
+
+/**
+ * optional string default_opening_charge_uuid = 32;
+ * @return {string}
+ */
+proto.data.PointOfSales.prototype.getDefaultOpeningChargeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setDefaultOpeningChargeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 32, value);
+};
+
+
+/**
+ * optional string default_withdrawal_charge_uuid = 33;
+ * @return {string}
+ */
+proto.data.PointOfSales.prototype.getDefaultWithdrawalChargeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setDefaultWithdrawalChargeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 33, value);
+};
+
+
+/**
+ * optional Decimal maximum_discount_allowed = 34;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.PointOfSales.prototype.getMaximumDiscountAllowed = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 34));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.PointOfSales} returns this
+*/
+proto.data.PointOfSales.prototype.setMaximumDiscountAllowed = function(value) {
+  return jspb.Message.setWrapperField(this, 34, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.clearMaximumDiscountAllowed = function() {
+  return this.setMaximumDiscountAllowed(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.hasMaximumDiscountAllowed = function() {
+  return jspb.Message.getField(this, 34) != null;
+};
+
+
+/**
+ * optional Decimal write_off_amount_tolerance = 35;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.PointOfSales.prototype.getWriteOffAmountTolerance = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 35));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.PointOfSales} returns this
+*/
+proto.data.PointOfSales.prototype.setWriteOffAmountTolerance = function(value) {
+  return jspb.Message.setWrapperField(this, 35, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.clearWriteOffAmountTolerance = function() {
+  return this.setWriteOffAmountTolerance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.hasWriteOffAmountTolerance = function() {
+  return jspb.Message.getField(this, 35) != null;
+};
+
+
+/**
+ * optional bool is_allows_allocate_seller = 36;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsAllowsAllocateSeller = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 36, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsAllowsAllocateSeller = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 36, value);
+};
+
+
+/**
+ * optional bool is_allows_concurrent_use = 37;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsAllowsConcurrentUse = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 37, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsAllowsConcurrentUse = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 37, value);
+};
+
+
+/**
+ * optional bool is_confirm_complete_shipment = 38;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsConfirmCompleteShipment = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 38, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsConfirmCompleteShipment = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 38, value);
+};
+
+
+/**
+ * optional bool is_allows_cash_closing = 39;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsAllowsCashClosing = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 39, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsAllowsCashClosing = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 39, value);
+};
+
+
+/**
+ * optional bool is_allows_cash_opening = 40;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsAllowsCashOpening = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 40, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsAllowsCashOpening = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 40, value);
+};
+
+
+/**
+ * optional bool is_allows_cash_withdrawal = 41;
+ * @return {boolean}
+ */
+proto.data.PointOfSales.prototype.getIsAllowsCashWithdrawal = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 41, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.PointOfSales} returns this
+ */
+proto.data.PointOfSales.prototype.setIsAllowsCashWithdrawal = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 41, value);
+};
+
+
 
 
 
@@ -19785,7 +25879,8 @@ proto.data.CreateOrderRequest.toObject = function(includeInstance, msg) {
     documentTypeUuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
     priceListUuid: jspb.Message.getFieldWithDefault(msg, 5, ""),
     warehouseUuid: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 7, "")
+    salesRepresentativeUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    campaignUuid: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -19850,6 +25945,10 @@ proto.data.CreateOrderRequest.deserializeBinaryFromReader = function(msg, reader
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setSalesRepresentativeUuid(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCampaignUuid(value);
       break;
     default:
       reader.skipField();
@@ -19927,6 +26026,13 @@ proto.data.CreateOrderRequest.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getCampaignUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -20075,6 +26181,24 @@ proto.data.CreateOrderRequest.prototype.getSalesRepresentativeUuid = function() 
  */
 proto.data.CreateOrderRequest.prototype.setSalesRepresentativeUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string campaign_uuid = 8;
+ * @return {string}
+ */
+proto.data.CreateOrderRequest.prototype.getCampaignUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreateOrderRequest} returns this
+ */
+proto.data.CreateOrderRequest.prototype.setCampaignUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -20442,19 +26566,23 @@ proto.data.CreatePaymentRequest.prototype.toObject = function(opt_includeInstanc
 proto.data.CreatePaymentRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
-    posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    orderUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    invoiceUuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    bankUuid: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    referenceNo: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    uuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    posUuid: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    orderUuid: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    invoiceUuid: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    bankUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    referenceNo: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 9, ""),
     amount: (f = msg.getAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
-    paymentDate: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    currencyUuid: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    paymentAccountDate: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    isRefund: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    paymentDate: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    currencyUuid: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    paymentAccountDate: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    isRefund: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    chargeUuid: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    collectingAgentUuid: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -20498,56 +26626,72 @@ proto.data.CreatePaymentRequest.deserializeBinaryFromReader = function(msg, read
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPosUuid(value);
+      msg.setUuid(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrderUuid(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInvoiceUuid(value);
+      msg.setPosUuid(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBankUuid(value);
+      msg.setOrderUuid(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReferenceNo(value);
+      msg.setInvoiceUuid(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setBankUuid(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReferenceNo(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 10:
       var value = new proto_base_data_type_pb.Decimal;
       reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
       msg.setAmount(value);
       break;
-    case 9:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setPaymentDate(value);
       break;
-    case 10:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setTenderTypeCode(value);
       break;
-    case 11:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setCurrencyUuid(value);
       break;
-    case 12:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setPaymentMethodUuid(value);
       break;
-    case 13:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setPaymentAccountDate(value);
       break;
-    case 14:
+    case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsRefund(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setChargeUuid(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCollectingAgentUuid(value);
       break;
     default:
       reader.skipField();
@@ -20586,52 +26730,66 @@ proto.data.CreatePaymentRequest.serializeBinaryToWriter = function(message, writ
       proto_client_pb.ClientRequest.serializeBinaryToWriter
     );
   }
-  f = message.getPosUuid();
+  f = message.getUuid();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getOrderUuid();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getId();
+  if (f !== 0) {
+    writer.writeInt32(
       3,
       f
     );
   }
-  f = message.getInvoiceUuid();
+  f = message.getPosUuid();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getBankUuid();
+  f = message.getOrderUuid();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getReferenceNo();
+  f = message.getInvoiceUuid();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getBankUuid();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
+  f = message.getReferenceNo();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getAmount();
   if (f != null) {
     writer.writeMessage(
-      8,
+      10,
       f,
       proto_base_data_type_pb.Decimal.serializeBinaryToWriter
     );
@@ -20639,42 +26797,56 @@ proto.data.CreatePaymentRequest.serializeBinaryToWriter = function(message, writ
   f = message.getPaymentDate();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      11,
       f
     );
   }
   f = message.getTenderTypeCode();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      12,
       f
     );
   }
   f = message.getCurrencyUuid();
   if (f.length > 0) {
     writer.writeString(
-      11,
+      13,
       f
     );
   }
   f = message.getPaymentMethodUuid();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      14,
       f
     );
   }
   f = message.getPaymentAccountDate();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      15,
       f
     );
   }
   f = message.getIsRefund();
   if (f) {
     writer.writeBool(
-      14,
+      16,
+      f
+    );
+  }
+  f = message.getChargeUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = message.getCollectingAgentUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -20719,10 +26891,10 @@ proto.data.CreatePaymentRequest.prototype.hasClientRequest = function() {
 
 
 /**
- * optional string pos_uuid = 2;
+ * optional string uuid = 2;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getPosUuid = function() {
+proto.data.CreatePaymentRequest.prototype.getUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -20731,34 +26903,34 @@ proto.data.CreatePaymentRequest.prototype.getPosUuid = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setPosUuid = function(value) {
+proto.data.CreatePaymentRequest.prototype.setUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string order_uuid = 3;
- * @return {string}
+ * optional int32 id = 3;
+ * @return {number}
  */
-proto.data.CreatePaymentRequest.prototype.getOrderUuid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.data.CreatePaymentRequest.prototype.getId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setOrderUuid = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.data.CreatePaymentRequest.prototype.setId = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional string invoice_uuid = 4;
+ * optional string pos_uuid = 4;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getInvoiceUuid = function() {
+proto.data.CreatePaymentRequest.prototype.getPosUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -20767,16 +26939,16 @@ proto.data.CreatePaymentRequest.prototype.getInvoiceUuid = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setInvoiceUuid = function(value) {
+proto.data.CreatePaymentRequest.prototype.setPosUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string bank_uuid = 5;
+ * optional string order_uuid = 5;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getBankUuid = function() {
+proto.data.CreatePaymentRequest.prototype.getOrderUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -20785,16 +26957,16 @@ proto.data.CreatePaymentRequest.prototype.getBankUuid = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setBankUuid = function(value) {
+proto.data.CreatePaymentRequest.prototype.setOrderUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string reference_no = 6;
+ * optional string invoice_uuid = 6;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getReferenceNo = function() {
+proto.data.CreatePaymentRequest.prototype.getInvoiceUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -20803,16 +26975,16 @@ proto.data.CreatePaymentRequest.prototype.getReferenceNo = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setReferenceNo = function(value) {
+proto.data.CreatePaymentRequest.prototype.setInvoiceUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string description = 7;
+ * optional string bank_uuid = 7;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getDescription = function() {
+proto.data.CreatePaymentRequest.prototype.getBankUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -20821,18 +26993,54 @@ proto.data.CreatePaymentRequest.prototype.getDescription = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setDescription = function(value) {
+proto.data.CreatePaymentRequest.prototype.setBankUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional Decimal amount = 8;
+ * optional string reference_no = 8;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getReferenceNo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setReferenceNo = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string description = 9;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional Decimal amount = 10;
  * @return {?proto.data.Decimal}
  */
 proto.data.CreatePaymentRequest.prototype.getAmount = function() {
   return /** @type{?proto.data.Decimal} */ (
-    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 8));
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 10));
 };
 
 
@@ -20841,7 +27049,7 @@ proto.data.CreatePaymentRequest.prototype.getAmount = function() {
  * @return {!proto.data.CreatePaymentRequest} returns this
 */
 proto.data.CreatePaymentRequest.prototype.setAmount = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -20859,51 +27067,15 @@ proto.data.CreatePaymentRequest.prototype.clearAmount = function() {
  * @return {boolean}
  */
 proto.data.CreatePaymentRequest.prototype.hasAmount = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string payment_date = 9;
+ * optional string payment_date = 11;
  * @return {string}
  */
 proto.data.CreatePaymentRequest.prototype.getPaymentDate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.data.CreatePaymentRequest} returns this
- */
-proto.data.CreatePaymentRequest.prototype.setPaymentDate = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string tender_type_code = 10;
- * @return {string}
- */
-proto.data.CreatePaymentRequest.prototype.getTenderTypeCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.data.CreatePaymentRequest} returns this
- */
-proto.data.CreatePaymentRequest.prototype.setTenderTypeCode = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional string currency_uuid = 11;
- * @return {string}
- */
-proto.data.CreatePaymentRequest.prototype.getCurrencyUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -20912,16 +27084,16 @@ proto.data.CreatePaymentRequest.prototype.getCurrencyUuid = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setCurrencyUuid = function(value) {
+proto.data.CreatePaymentRequest.prototype.setPaymentDate = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional string payment_method_uuid = 12;
+ * optional string tender_type_code = 12;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getPaymentMethodUuid = function() {
+proto.data.CreatePaymentRequest.prototype.getTenderTypeCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -20930,16 +27102,16 @@ proto.data.CreatePaymentRequest.prototype.getPaymentMethodUuid = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setPaymentMethodUuid = function(value) {
+proto.data.CreatePaymentRequest.prototype.setTenderTypeCode = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string payment_account_date = 13;
+ * optional string currency_uuid = 13;
  * @return {string}
  */
-proto.data.CreatePaymentRequest.prototype.getPaymentAccountDate = function() {
+proto.data.CreatePaymentRequest.prototype.getCurrencyUuid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -20948,17 +27120,53 @@ proto.data.CreatePaymentRequest.prototype.getPaymentAccountDate = function() {
  * @param {string} value
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
-proto.data.CreatePaymentRequest.prototype.setPaymentAccountDate = function(value) {
+proto.data.CreatePaymentRequest.prototype.setCurrencyUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional bool is_refund = 14;
+ * optional string payment_method_uuid = 14;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getPaymentMethodUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setPaymentMethodUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string payment_account_date = 15;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getPaymentAccountDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setPaymentAccountDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional bool is_refund = 16;
  * @return {boolean}
  */
 proto.data.CreatePaymentRequest.prototype.getIsRefund = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
@@ -20967,7 +27175,43 @@ proto.data.CreatePaymentRequest.prototype.getIsRefund = function() {
  * @return {!proto.data.CreatePaymentRequest} returns this
  */
 proto.data.CreatePaymentRequest.prototype.setIsRefund = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 14, value);
+  return jspb.Message.setProto3BooleanField(this, 16, value);
+};
+
+
+/**
+ * optional string charge_uuid = 17;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getChargeUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setChargeUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string collecting_agent_uuid = 18;
+ * @return {string}
+ */
+proto.data.CreatePaymentRequest.prototype.getCollectingAgentUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.CreatePaymentRequest} returns this
+ */
+proto.data.CreatePaymentRequest.prototype.setCollectingAgentUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
@@ -21629,8 +27873,10 @@ proto.data.ListPaymentsRequest.toObject = function(includeInstance, msg) {
     clientRequest: (f = msg.getClientRequest()) && proto_client_pb.ClientRequest.toObject(includeInstance, f),
     posUuid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     orderUuid: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    isOnlyRefund: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    isOnlyReceipt: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 7, ""),
     criteria: (f = msg.getCriteria()) && proto_base_data_type_pb.Criteria.toObject(includeInstance, f)
   };
 
@@ -21682,14 +27928,22 @@ proto.data.ListPaymentsRequest.deserializeBinaryFromReader = function(msg, reade
       msg.setOrderUuid(value);
       break;
     case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyRefund(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsOnlyReceipt(value);
+      break;
+    case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageSize(value);
       break;
-    case 5:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
-    case 6:
+    case 8:
       var value = new proto_base_data_type_pb.Criteria;
       reader.readMessage(value,proto_base_data_type_pb.Criteria.deserializeBinaryFromReader);
       msg.setCriteria(value);
@@ -21745,24 +27999,38 @@ proto.data.ListPaymentsRequest.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getIsOnlyRefund();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getIsOnlyReceipt();
+  if (f) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
   f = message.getPageSize();
   if (f !== 0) {
     writer.writeInt32(
-      4,
+      6,
       f
     );
   }
   f = message.getPageToken();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      7,
       f
     );
   }
   f = message.getCriteria();
   if (f != null) {
     writer.writeMessage(
-      6,
+      8,
       f,
       proto_base_data_type_pb.Criteria.serializeBinaryToWriter
     );
@@ -21844,11 +28112,47 @@ proto.data.ListPaymentsRequest.prototype.setOrderUuid = function(value) {
 
 
 /**
- * optional int32 page_size = 4;
+ * optional bool is_only_refund = 4;
+ * @return {boolean}
+ */
+proto.data.ListPaymentsRequest.prototype.getIsOnlyRefund = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListPaymentsRequest} returns this
+ */
+proto.data.ListPaymentsRequest.prototype.setIsOnlyRefund = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional bool is_only_receipt = 5;
+ * @return {boolean}
+ */
+proto.data.ListPaymentsRequest.prototype.getIsOnlyReceipt = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.data.ListPaymentsRequest} returns this
+ */
+proto.data.ListPaymentsRequest.prototype.setIsOnlyReceipt = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional int32 page_size = 6;
  * @return {number}
  */
 proto.data.ListPaymentsRequest.prototype.getPageSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -21857,16 +28161,16 @@ proto.data.ListPaymentsRequest.prototype.getPageSize = function() {
  * @return {!proto.data.ListPaymentsRequest} returns this
  */
 proto.data.ListPaymentsRequest.prototype.setPageSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional string page_token = 5;
+ * optional string page_token = 7;
  * @return {string}
  */
 proto.data.ListPaymentsRequest.prototype.getPageToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -21875,17 +28179,17 @@ proto.data.ListPaymentsRequest.prototype.getPageToken = function() {
  * @return {!proto.data.ListPaymentsRequest} returns this
  */
 proto.data.ListPaymentsRequest.prototype.setPageToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional Criteria criteria = 6;
+ * optional Criteria criteria = 8;
  * @return {?proto.data.Criteria}
  */
 proto.data.ListPaymentsRequest.prototype.getCriteria = function() {
   return /** @type{?proto.data.Criteria} */ (
-    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Criteria, 6));
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Criteria, 8));
 };
 
 
@@ -21894,7 +28198,7 @@ proto.data.ListPaymentsRequest.prototype.getCriteria = function() {
  * @return {!proto.data.ListPaymentsRequest} returns this
 */
 proto.data.ListPaymentsRequest.prototype.setCriteria = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -21912,7 +28216,7 @@ proto.data.ListPaymentsRequest.prototype.clearCriteria = function() {
  * @return {boolean}
  */
 proto.data.ListPaymentsRequest.prototype.hasCriteria = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -22397,7 +28701,8 @@ proto.data.Payment.toObject = function(includeInstance, msg) {
     tenderTypeCode: jspb.Message.getFieldWithDefault(msg, 16, ""),
     currencyUuid: jspb.Message.getFieldWithDefault(msg, 17, ""),
     isRefund: jspb.Message.getBooleanFieldWithDefault(msg, 18, false),
-    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 19, "")
+    paymentMethodUuid: jspb.Message.getFieldWithDefault(msg, 19, ""),
+    orderCurrencyRate: (f = msg.getOrderCurrencyRate()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -22513,6 +28818,11 @@ proto.data.Payment.deserializeBinaryFromReader = function(msg, reader) {
     case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.setPaymentMethodUuid(value);
+      break;
+    case 20:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setOrderCurrencyRate(value);
       break;
     default:
       reader.skipField();
@@ -22678,6 +28988,14 @@ proto.data.Payment.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       19,
       f
+    );
+  }
+  f = message.getOrderCurrencyRate();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
     );
   }
 };
@@ -23098,6 +29416,43 @@ proto.data.Payment.prototype.getPaymentMethodUuid = function() {
  */
 proto.data.Payment.prototype.setPaymentMethodUuid = function(value) {
   return jspb.Message.setProto3StringField(this, 19, value);
+};
+
+
+/**
+ * optional Decimal order_currency_rate = 20;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.Payment.prototype.getOrderCurrencyRate = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 20));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.Payment} returns this
+*/
+proto.data.Payment.prototype.setOrderCurrencyRate = function(value) {
+  return jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.Payment} returns this
+ */
+proto.data.Payment.prototype.clearOrderCurrencyRate = function() {
+  return this.setOrderCurrencyRate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.Payment.prototype.hasOrderCurrencyRate = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
@@ -23956,7 +30311,8 @@ proto.data.UpdateOrderRequest.toObject = function(includeInstance, msg) {
     documentTypeUuid: jspb.Message.getFieldWithDefault(msg, 5, ""),
     priceListUuid: jspb.Message.getFieldWithDefault(msg, 6, ""),
     warehouseUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 8, "")
+    description: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    campaignUuid: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -24025,6 +30381,10 @@ proto.data.UpdateOrderRequest.deserializeBinaryFromReader = function(msg, reader
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCampaignUuid(value);
       break;
     default:
       reader.skipField();
@@ -24109,6 +30469,13 @@ proto.data.UpdateOrderRequest.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getCampaignUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -24275,6 +30642,24 @@ proto.data.UpdateOrderRequest.prototype.getDescription = function() {
  */
 proto.data.UpdateOrderRequest.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string campaign_uuid = 9;
+ * @return {string}
+ */
+proto.data.UpdateOrderRequest.prototype.getCampaignUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.UpdateOrderRequest} returns this
+ */
+proto.data.UpdateOrderRequest.prototype.setCampaignUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -25112,7 +31497,12 @@ proto.data.Order.toObject = function(includeInstance, msg) {
     customer: (f = msg.getCustomer()) && proto.data.Customer.toObject(includeInstance, f),
     isDelivered: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     orderReference: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 18, "")
+    description: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    campaignUuid: jspb.Message.getFieldWithDefault(msg, 19, ""),
+    displayCurrencyRate: (f = msg.getDisplayCurrencyRate()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    openAmount: (f = msg.getOpenAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    paymentAmount: (f = msg.getPaymentAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f),
+    refundAmount: (f = msg.getRefundAmount()) && proto_base_data_type_pb.Decimal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -25226,6 +31616,30 @@ proto.data.Order.deserializeBinaryFromReader = function(msg, reader) {
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCampaignUuid(value);
+      break;
+    case 20:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setDisplayCurrencyRate(value);
+      break;
+    case 21:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setOpenAmount(value);
+      break;
+    case 22:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setPaymentAmount(value);
+      break;
+    case 23:
+      var value = new proto_base_data_type_pb.Decimal;
+      reader.readMessage(value,proto_base_data_type_pb.Decimal.deserializeBinaryFromReader);
+      msg.setRefundAmount(value);
       break;
     default:
       reader.skipField();
@@ -25383,6 +31797,45 @@ proto.data.Order.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       18,
       f
+    );
+  }
+  f = message.getCampaignUuid();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
+      f
+    );
+  }
+  f = message.getDisplayCurrencyRate();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getOpenAmount();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getPaymentAmount();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
+    );
+  }
+  f = message.getRefundAmount();
+  if (f != null) {
+    writer.writeMessage(
+      23,
+      f,
+      proto_base_data_type_pb.Decimal.serializeBinaryToWriter
     );
   }
 };
@@ -25881,6 +32334,172 @@ proto.data.Order.prototype.getDescription = function() {
  */
 proto.data.Order.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional string campaign_uuid = 19;
+ * @return {string}
+ */
+proto.data.Order.prototype.getCampaignUuid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.data.Order} returns this
+ */
+proto.data.Order.prototype.setCampaignUuid = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
+};
+
+
+/**
+ * optional Decimal display_currency_rate = 20;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.Order.prototype.getDisplayCurrencyRate = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 20));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.Order} returns this
+*/
+proto.data.Order.prototype.setDisplayCurrencyRate = function(value) {
+  return jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.Order} returns this
+ */
+proto.data.Order.prototype.clearDisplayCurrencyRate = function() {
+  return this.setDisplayCurrencyRate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.Order.prototype.hasDisplayCurrencyRate = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional Decimal open_amount = 21;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.Order.prototype.getOpenAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 21));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.Order} returns this
+*/
+proto.data.Order.prototype.setOpenAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 21, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.Order} returns this
+ */
+proto.data.Order.prototype.clearOpenAmount = function() {
+  return this.setOpenAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.Order.prototype.hasOpenAmount = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional Decimal payment_amount = 22;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.Order.prototype.getPaymentAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 22));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.Order} returns this
+*/
+proto.data.Order.prototype.setPaymentAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 22, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.Order} returns this
+ */
+proto.data.Order.prototype.clearPaymentAmount = function() {
+  return this.setPaymentAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.Order.prototype.hasPaymentAmount = function() {
+  return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional Decimal refund_amount = 23;
+ * @return {?proto.data.Decimal}
+ */
+proto.data.Order.prototype.getRefundAmount = function() {
+  return /** @type{?proto.data.Decimal} */ (
+    jspb.Message.getWrapperField(this, proto_base_data_type_pb.Decimal, 23));
+};
+
+
+/**
+ * @param {?proto.data.Decimal|undefined} value
+ * @return {!proto.data.Order} returns this
+*/
+proto.data.Order.prototype.setRefundAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 23, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.data.Order} returns this
+ */
+proto.data.Order.prototype.clearRefundAmount = function() {
+  return this.setRefundAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.Order.prototype.hasRefundAmount = function() {
+  return jspb.Message.getField(this, 23) != null;
 };
 
 

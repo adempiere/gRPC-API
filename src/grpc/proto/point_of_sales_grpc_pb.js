@@ -22,6 +22,17 @@ var proto_core_functionality_pb = require('../proto/core_functionality_pb.js');
 var proto_base_data_type_pb = require('../proto/base_data_type_pb.js');
 var proto_client_pb = require('../proto/client_pb.js');
 
+function serialize_data_AllocateSellerRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.AllocateSellerRequest)) {
+    throw new Error('Expected argument of type data.AllocateSellerRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_AllocateSellerRequest(buffer_arg) {
+  return proto_point_of_sales_pb.AllocateSellerRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_data_AvailableRefund(arg) {
   if (!(arg instanceof proto_point_of_sales_pb.AvailableRefund)) {
     throw new Error('Expected argument of type data.AvailableRefund');
@@ -31,6 +42,50 @@ function serialize_data_AvailableRefund(arg) {
 
 function deserialize_data_AvailableRefund(buffer_arg) {
   return proto_point_of_sales_pb.AvailableRefund.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_CashClosing(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.CashClosing)) {
+    throw new Error('Expected argument of type data.CashClosing');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_CashClosing(buffer_arg) {
+  return proto_point_of_sales_pb.CashClosing.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_CashClosingRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.CashClosingRequest)) {
+    throw new Error('Expected argument of type data.CashClosingRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_CashClosingRequest(buffer_arg) {
+  return proto_point_of_sales_pb.CashClosingRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_CashOpeningRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.CashOpeningRequest)) {
+    throw new Error('Expected argument of type data.CashOpeningRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_CashOpeningRequest(buffer_arg) {
+  return proto_point_of_sales_pb.CashOpeningRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_CashWithdrawalRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.CashWithdrawalRequest)) {
+    throw new Error('Expected argument of type data.CashWithdrawalRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_CashWithdrawalRequest(buffer_arg) {
+  return proto_point_of_sales_pb.CashWithdrawalRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_data_CreateCustomerBankAccountRequest(arg) {
@@ -86,6 +141,17 @@ function serialize_data_CreatePaymentRequest(arg) {
 
 function deserialize_data_CreatePaymentRequest(buffer_arg) {
   return proto_point_of_sales_pb.CreatePaymentRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_CreateRefundReferenceRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.CreateRefundReferenceRequest)) {
+    throw new Error('Expected argument of type data.CreateRefundReferenceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_CreateRefundReferenceRequest(buffer_arg) {
+  return proto_point_of_sales_pb.CreateRefundReferenceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_data_CreateShipmentLineRequest(arg) {
@@ -319,6 +385,28 @@ function deserialize_data_ListAvailableCurrenciesResponse(buffer_arg) {
   return proto_point_of_sales_pb.ListAvailableCurrenciesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_data_ListAvailableDiscountsRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListAvailableDiscountsRequest)) {
+    throw new Error('Expected argument of type data.ListAvailableDiscountsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListAvailableDiscountsRequest(buffer_arg) {
+  return proto_point_of_sales_pb.ListAvailableDiscountsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListAvailableDiscountsResponse(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListAvailableDiscountsResponse)) {
+    throw new Error('Expected argument of type data.ListAvailableDiscountsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListAvailableDiscountsResponse(buffer_arg) {
+  return proto_point_of_sales_pb.ListAvailableDiscountsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_data_ListAvailableDocumentTypesRequest(arg) {
   if (!(arg instanceof proto_point_of_sales_pb.ListAvailableDocumentTypesRequest)) {
     throw new Error('Expected argument of type data.ListAvailableDocumentTypesRequest');
@@ -405,6 +493,50 @@ function serialize_data_ListAvailableWarehousesResponse(arg) {
 
 function deserialize_data_ListAvailableWarehousesResponse(buffer_arg) {
   return proto_point_of_sales_pb.ListAvailableWarehousesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListCashMovementsRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListCashMovementsRequest)) {
+    throw new Error('Expected argument of type data.ListCashMovementsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListCashMovementsRequest(buffer_arg) {
+  return proto_point_of_sales_pb.ListCashMovementsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListCashMovementsResponse(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListCashMovementsResponse)) {
+    throw new Error('Expected argument of type data.ListCashMovementsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListCashMovementsResponse(buffer_arg) {
+  return proto_point_of_sales_pb.ListCashMovementsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListCashSummaryMovementsRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListCashSummaryMovementsRequest)) {
+    throw new Error('Expected argument of type data.ListCashSummaryMovementsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListCashSummaryMovementsRequest(buffer_arg) {
+  return proto_point_of_sales_pb.ListCashSummaryMovementsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListCashSummaryMovementsResponse(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListCashSummaryMovementsResponse)) {
+    throw new Error('Expected argument of type data.ListCashSummaryMovementsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListCashSummaryMovementsResponse(buffer_arg) {
+  return proto_point_of_sales_pb.ListCashSummaryMovementsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_data_ListCustomerBankAccountsRequest(arg) {
@@ -539,6 +671,28 @@ function deserialize_data_ListProductPriceResponse(buffer_arg) {
   return proto_point_of_sales_pb.ListProductPriceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_data_ListRefundReferencesRequest(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListRefundReferencesRequest)) {
+    throw new Error('Expected argument of type data.ListRefundReferencesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListRefundReferencesRequest(buffer_arg) {
+  return proto_point_of_sales_pb.ListRefundReferencesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_ListRefundReferencesResponse(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.ListRefundReferencesResponse)) {
+    throw new Error('Expected argument of type data.ListRefundReferencesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_ListRefundReferencesResponse(buffer_arg) {
+  return proto_point_of_sales_pb.ListRefundReferencesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_data_ListShipmentLinesRequest(arg) {
   if (!(arg instanceof proto_point_of_sales_pb.ListShipmentLinesRequest)) {
     throw new Error('Expected argument of type data.ListShipmentLinesRequest');
@@ -669,6 +823,17 @@ function serialize_data_ProductPrice(arg) {
 
 function deserialize_data_ProductPrice(buffer_arg) {
   return proto_core_functionality_pb.ProductPrice.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_data_RefundReference(arg) {
+  if (!(arg instanceof proto_point_of_sales_pb.RefundReference)) {
+    throw new Error('Expected argument of type data.RefundReference');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_data_RefundReference(buffer_arg) {
+  return proto_point_of_sales_pb.RefundReference.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_data_ReverseSalesRequest(arg) {
@@ -1085,6 +1250,18 @@ listAvailableDocumentTypes: {
     responseSerialize: serialize_data_ListAvailableDocumentTypesResponse,
     responseDeserialize: deserialize_data_ListAvailableDocumentTypesResponse,
   },
+  // 	List of Available Discounts
+listAvailableDiscounts: {
+    path: '/data.Store/ListAvailableDiscounts',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.ListAvailableDiscountsRequest,
+    responseType: proto_point_of_sales_pb.ListAvailableDiscountsResponse,
+    requestSerialize: serialize_data_ListAvailableDiscountsRequest,
+    requestDeserialize: deserialize_data_ListAvailableDiscountsRequest,
+    responseSerialize: serialize_data_ListAvailableDiscountsResponse,
+    responseDeserialize: deserialize_data_ListAvailableDiscountsResponse,
+  },
   // 	Customer
 // 	Create Customer
 createCustomer: {
@@ -1315,6 +1492,102 @@ reverseSales: {
     requestDeserialize: deserialize_data_ReverseSalesRequest,
     responseSerialize: serialize_data_Order,
     responseDeserialize: deserialize_data_Order,
+  },
+  // 	Cash Management
+processCashOpening: {
+    path: '/data.Store/ProcessCashOpening',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.CashOpeningRequest,
+    responseType: proto_base_data_type_pb.Empty,
+    requestSerialize: serialize_data_CashOpeningRequest,
+    requestDeserialize: deserialize_data_CashOpeningRequest,
+    responseSerialize: serialize_data_Empty,
+    responseDeserialize: deserialize_data_Empty,
+  },
+  // 	Cash Withdrawal
+processCashWithdrawal: {
+    path: '/data.Store/ProcessCashWithdrawal',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.CashWithdrawalRequest,
+    responseType: proto_base_data_type_pb.Empty,
+    requestSerialize: serialize_data_CashWithdrawalRequest,
+    requestDeserialize: deserialize_data_CashWithdrawalRequest,
+    responseSerialize: serialize_data_Empty,
+    responseDeserialize: deserialize_data_Empty,
+  },
+  // 	Cash Closing
+processCashClosing: {
+    path: '/data.Store/ProcessCashClosing',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.CashClosingRequest,
+    responseType: proto_point_of_sales_pb.CashClosing,
+    requestSerialize: serialize_data_CashClosingRequest,
+    requestDeserialize: deserialize_data_CashClosingRequest,
+    responseSerialize: serialize_data_CashClosing,
+    responseDeserialize: deserialize_data_CashClosing,
+  },
+  // 	List all cash movements
+listCashMovements: {
+    path: '/data.Store/ListCashMovements',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.ListCashMovementsRequest,
+    responseType: proto_point_of_sales_pb.ListCashMovementsResponse,
+    requestSerialize: serialize_data_ListCashMovementsRequest,
+    requestDeserialize: deserialize_data_ListCashMovementsRequest,
+    responseSerialize: serialize_data_ListCashMovementsResponse,
+    responseDeserialize: deserialize_data_ListCashMovementsResponse,
+  },
+  // 	List Cash Summary
+listCashSummaryMovements: {
+    path: '/data.Store/ListCashSummaryMovements',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.ListCashSummaryMovementsRequest,
+    responseType: proto_point_of_sales_pb.ListCashSummaryMovementsResponse,
+    requestSerialize: serialize_data_ListCashSummaryMovementsRequest,
+    requestDeserialize: deserialize_data_ListCashSummaryMovementsRequest,
+    responseSerialize: serialize_data_ListCashSummaryMovementsResponse,
+    responseDeserialize: deserialize_data_ListCashSummaryMovementsResponse,
+  },
+  // 	Allocate Seller
+allocateSeller: {
+    path: '/data.Store/AllocateSeller',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.AllocateSellerRequest,
+    responseType: proto_base_data_type_pb.Empty,
+    requestSerialize: serialize_data_AllocateSellerRequest,
+    requestDeserialize: deserialize_data_AllocateSellerRequest,
+    responseSerialize: serialize_data_Empty,
+    responseDeserialize: deserialize_data_Empty,
+  },
+  // 	Create Refund Reference
+createRefundReference: {
+    path: '/data.Store/CreateRefundReference',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.CreateRefundReferenceRequest,
+    responseType: proto_point_of_sales_pb.RefundReference,
+    requestSerialize: serialize_data_CreateRefundReferenceRequest,
+    requestDeserialize: deserialize_data_CreateRefundReferenceRequest,
+    responseSerialize: serialize_data_RefundReference,
+    responseDeserialize: deserialize_data_RefundReference,
+  },
+  // 	List Refund References
+listRefundReferences: {
+    path: '/data.Store/ListRefundReferences',
+    requestStream: false,
+    responseStream: false,
+    requestType: proto_point_of_sales_pb.ListRefundReferencesRequest,
+    responseType: proto_point_of_sales_pb.ListRefundReferencesResponse,
+    requestSerialize: serialize_data_ListRefundReferencesRequest,
+    requestDeserialize: deserialize_data_ListRefundReferencesRequest,
+    responseSerialize: serialize_data_ListRefundReferencesResponse,
+    responseDeserialize: deserialize_data_ListRefundReferencesResponse,
   },
 };
 
