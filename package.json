@@ -12,7 +12,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "stub": "npm run stub:access && npm run stub:base_data_type && npm run stub:business && npm run stub:client && npm run stub:core_functionality && npm run stub:dictionary && npm run stub:enrollment && npm run stub:point_of_sales",
+    "stub": "grpc_tools_node_protoc --proto_path=proto/ access.proto base_data_type.proto business.proto client.proto core_functionality.proto dictionary.proto enrollment.proto point_of_sales.proto --js_out=import_style=commonjs,binary:src/grpc/proto/ --grpc_out=grpc_js:src/grpc/proto/",
+    "stub:all": "npm run stub:access && npm run stub:base_data_type && npm run stub:business && npm run stub:client && npm run stub:core_functionality && npm run stub:dictionary && npm run stub:enrollment && npm run stub:point_of_sales",
     "stub:access": "grpc_tools_node_protoc --proto_path=proto/ proto/access.proto --js_out=import_style=commonjs,binary:src/grpc/proto/ --grpc_out=grpc_js:src/grpc/proto/",
     "stub:base_data_type": "grpc_tools_node_protoc --proto_path=proto/ proto/base_data_type.proto --js_out=import_style=commonjs,binary:src/grpc/proto/ --grpc_out=grpc_js:src/grpc/proto/",
     "stub:business": "grpc_tools_node_protoc --proto_path=proto/ proto/business.proto --js_out=import_style=commonjs,binary:src/grpc/proto/ --grpc_out=grpc_js:src/grpc/proto/",
